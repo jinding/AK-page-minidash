@@ -1,0 +1,5 @@
+SELECT SUM(o.total)
+FROM core_action a
+JOIN core_order o ON o.action_id = a.id
+WHERE a.status = 'complete'
+AND page_id = {{page_id}}

@@ -1,0 +1,3 @@
+SELECT type
+FROM core_page
+WHERE id = {{ page_id }};

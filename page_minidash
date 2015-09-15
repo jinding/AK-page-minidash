@@ -1,0 +1,9 @@
+{% cache_report 'action_takers' %}
+{% cache_report 'page_total_NTL' %}
+{% cache_report 'page_type' %}
+
+{{ action_takers|commify}} actions, {{ page_total_NTL|commify }} NTL ({{page_total_NTL|percent_of:action_takers}})
+{% if page_type|striptags == 'Donation' %}
+{% cache_report 'page_donations_total' %}
+, ${{page_donations_total|commify}} (avg ${% divide page_donations_total action_takers 2 %})
+{% endif %}

@@ -1,0 +1,6 @@
+SELECT COUNT(DISTINCT ca.user_id) AS NTL
+FROM core_action ca 
+WHERE ca.status = 'complete'
+AND ca.page_id = {{page_id}}
+AND ca.subscribed_user = 1
+AND ca.created_at between {last_run} and {now};
